@@ -65,7 +65,7 @@ I'll describe the issues on each platform and you can then choose to follow the 
 - Linux - Similar to Windows. if you have any issues doing an "npm i johnny-five" then here I've included the "node_modules" directory that you'll need.
 
 
-# PINS on teh ESP8266 D1 Mini 
+# PINS on the ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:
 
 NOTE: nc = not connected
