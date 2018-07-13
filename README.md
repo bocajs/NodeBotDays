@@ -42,7 +42,7 @@ const five = require("johnny-five");
 const EtherPortClient = require("etherport-client").EtherPortClient;
 ```
 
-3) Now create the rest of your app as you see fit, using the examples from the [Johnny-Five Examples Page](http://johnny-five.io/examples/)
+3) Now create the rest of your app as you see fit, or if you already used my johnnyFiveSample.js you're ready to go
 
 # YOU'RE DONE
 You should get something like this: and your device's built in LED should be blinking
@@ -52,7 +52,7 @@ You should get something like this: and your device's built in LED should be bli
 READY!
 IT'S BLINKING!!!
 ```
-
+NOW it's time for you to use the  [Johnny-Five Examples & API](http://johnny-five.io/examples/) to make something wonderful!
 
 # NOTES & ERRORS
 There are three directories in this repo that are per each platform (Windows, Mac, Linux).<BR>
