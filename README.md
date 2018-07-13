@@ -28,11 +28,11 @@ Of course you tell johnny-five what to do IN javascript, so in essense we tell t
 # Instructions
 
 1) Flash the Arduino
-For our ESP8266 D1 Mini Devices we'll be using the StandardFirmataWiFi Firmware.
-CHANGE the  IP address to something unique and document it and of course set the Wifi SSID and Password correclty.
-You can use the steps 1-4 in this guide to help http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/
-We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo
-*OR* you can ask someone to do it for you. 
+For our ESP8266 D1 Mini Devices we'll be using the StandardFirmataWiFi Firmware.<BR>
+CHANGE the  IP address to something unique and document it and of course set the Wifi SSID and Password correclty.<BR>
+You can use the steps 1-4 in this guide to help http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/<BR>
+We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo<BR>
+*OR* you can ask someone to do it for you. <BR>
 
 2) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs
 OR 
