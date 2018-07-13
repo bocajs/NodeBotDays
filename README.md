@@ -1,6 +1,7 @@
 <p align="center">
   <img src="http://nodebots.io/img/equation.png">
 </p>
+
 # NodeBotDays
 You'll find our Installation notes &amp; Start up script for our annual NodeBotDays Event
 
@@ -70,4 +71,3 @@ nc = not connected
 27 -> nc
 28 -> nc
 29 -> nc
-
