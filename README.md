@@ -34,15 +34,20 @@ You can use the steps 1-4 in this guide to help http://www.instructables.com/id/
 We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo<BR>
 *OR* you can ask someone to do it for you. <BR>
 
-2) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs
-OR 
-Create a new application and include the "johnny-five" and "etherport-client" Libraries at the top
+2) install the johnny five and etherport libraries in your project (see NOTES & ERRORS below for any errors)
+```
+npm i johnny-five
+npm i etherport-client
+```
+
+3) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs <BR>
+OR <BR>
+Create a new file and include the "johnny-five" and "etherport-client" libraries (see below) and code something wonderful!
 ```
 const five = require("johnny-five"); 
 const EtherPortClient = require("etherport-client").EtherPortClient;
 ```
 
-3) Now create the rest of your app as you see fit, or if you already used my johnnyFiveSample.js you're ready to go
 
 # YOU'RE DONE
 You should get something like this: and your device's built in LED should be blinking
