@@ -5,27 +5,47 @@
 # NodeBotDays
 You'll find our Installation notes &amp; Start up script for our annual NodeBotDays Event
 
-
-Welcome to Our annual BocaJS NodeBot Days event.
+##Welcome to Our annual BocaJS NodeBot Days event.
 
 It's usually on the last saturday in July.
 
-In this repo you'll find an example file that's ready for you to go.
+We will be using be using the [johnny-five](http://johnny-five.io/) library to program our arduino devices.
 
-ONCE you've flashed your "Arduino" Device (we're using ESP8266 D1 R2 Mini) 
-(Follow these instructions if you haven't, steps 1-4  http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/ )
-The files (if you know what you're doing, or follow the above advice) is included in a directory here called "ESP8266 Firmware"
+##The basics
+1) We'll flash our decices with the software for us to control it (Firmata)
+2) We will add the johnny-five npm package (and another one)
+3) We'll create our app and we'll be controlling our arduino with NodeJS!!!
 
-Or if you've already had someone flash it for you, then you're ready to go.
+##The Detailed explanation
 
-Note the instructions are different for Mac and Windows (linux follow Mac's instructions) but only because there was an extra step in windows for which I did some work already for you.
+The "trick" to "running javascript on our arduino" is that "we don't"
+What we're doing is creating a program in our arduino that waits for commands from our laptops.
+We then use the johnny-five and other helpful libraries to send commands to the device.
+and the device does what we tell it.
 
-- Clone this repo ( git clone https://github.com/bocajs/NodeBotDays.git )
-- If you're in windows (mac ignore this ) go into the "Windows directory"
-- If you're in a Mac (Windows ignore this) run: npm i
-- Now edit the johnnyFiveSample.js and CHANGE the IP value: "192.168.29.50" to what matches your device and save the file.
-- You're done. Run it by running "node johnnyFiveSample.js"
-It should now show something line this:
+Of course you tell johnny-five what to do IN javascript, so in essense we tell the Arduino what to do in javascript
+
+##Instructions
+
+1) Flash the Arduino
+For our ESP8266 D1 Mini Devices we'll be using the StandardFirmataWiFi Firmware.
+CHANGE the  IP address to something unique and document it and of course set the Wifi SSID and Password correclty.
+You can use the steps 1-4 in this guide to help http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/
+We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo
+*OR* you can ask someone to do it for you. 
+
+2A) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs
+
+2B) create a new application and include the "johnny-five" and "etherport-client" Libraries at the top
+```
+const five = require("johnny-five"); 
+const EtherPortClient = require("etherport-client").EtherPortClient;
+```
+
+3) Now create the rest of your app as you see fit, using the examples from the [Johnny-Five Examples Page](http://johnny-five.io/examples/)
+
+##YOU'RE DONE
+You should get something like this: and your device's built in LED should be blinking
 
 1531436035013 SerialPort Connecting to host:port: 192.168.29.50:3030
 1531436035016 Connected Connecting to host:port: 192.168.29.50:3030
@@ -34,40 +54,49 @@ IT'S BLINKING!!!
 
 
 
-You're good to go. Now get some sensors, lights, resistors and get playing.
-Some good examples and documentation can be found at: http://johnny-five.io/examples/
+##NOTES & ERRORS
+There are three directories in this repo that are per each platform (Windows, Mac, Linux)
+If you have your computer setup correctly (or are just lucky that way) then you WON'T need them.
+But each platform DOES have some issues in some situations so each directy has a trick to get you going.
+
+I'll describe the issues on each platform and you can then choose to follow the steps within each directory if you need it.
+- Windows - Python is hard to setup and when you "npm i johnny-five" you'll get an error. I've included the "node_modules" that you'll need.
+- Mac - the issue isn't with johnny-five (if you have any). it's flashing the firmware on the arduino if you need to. I've include some drivers that may help.
+- Linux - Similar to Windows. if you have any issues doing an "npm i johnny-five" then here I've included the "node_modules" directory that you'll need.
 
 
-
+## PINS on teh ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:
-nc = not connected
-0 -> d3
-1 -> nc
-2 -> d4 = led
-3 -> nc
-4 -> d2
-5 -> d1
-6 -> watchdog(4) reset
-7 -> watchdog(4) reset
-8 -> watchdog(4) reset
-9 -> watchdog(4) reset
-10 -> nc
-11 -> watchdog(4) reset
-12 -> d7 low, d6 sporadic
-13 -> d0 high, d7 sporadic
-14 -> d0 high, d6 low, d7 low, d5 sporadic
-15 -> d0 high, d8 sporadic
-16 -> d0
-17 -> nc
-18 -> nc
-19 -> nc
-20 -> stack trace and pin-based(2) reset
-21 -> stack trace and watchdog(4) reset
-22 -> stack trace and watchdog(4) reset
-23 -> stack trace and watchdog(4) reset
-24 -> nc
-25 -> nc
-26 -> nc
-27 -> nc
-28 -> nc
-29 -> nc
+
+NOTE: nc = not connected
+
+- 0 -> d3
+- 1 -> nc
+- 2 -> d4 = led
+- 3 -> nc
+- 4 -> d2
+- 5 -> d1
+- 6 -> watchdog(4) reset
+- 7 -> watchdog(4) reset
+- 8 -> watchdog(4) reset
+- 9 -> watchdog(4) reset
+- 10 -> nc
+- 11 -> watchdog(4) reset
+- 12 -> d7 low, d6 sporadic
+- 13 -> d0 high, d7 sporadic
+- 14 -> d0 high, d6 low, d7 low, d5 sporadic
+- 15 -> d0 high, d8 sporadic
+- 16 -> d0
+- 17 -> nc
+- 18 -> nc
+- 19 -> nc
+- 20 -> stack trace and pin-based(2) reset
+- 21 -> stack trace and watchdog(4) reset
+- 22 -> stack trace and watchdog(4) reset
+- 23 -> stack trace and watchdog(4) reset
+- 24 -> nc
+- 25 -> nc
+- 26 -> nc
+- 27 -> nc
+- 28 -> nc
+- 29 -> nc

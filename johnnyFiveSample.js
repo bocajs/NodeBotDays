@@ -1,3 +1,7 @@
+/*
+ BocaJS's Sample for the ESP8266 D1 Mini included in our Internation NodeBotDays Event
+*/
+
 var five = require("johnny-five"); // Magic 
 var EtherPortClient = require("etherport-client").EtherPortClient; // Connect through WIFI to your compatible StandardFirmataWiFi Device like our ESP8266 D1 Mini
 
