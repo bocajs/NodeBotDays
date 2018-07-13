@@ -34,9 +34,9 @@ You can use the steps 1-4 in this guide to help http://www.instructables.com/id/
 We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo
 *OR* you can ask someone to do it for you. 
 
-2A) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs
-
-2B) create a new application and include the "johnny-five" and "etherport-client" Libraries at the top
+2) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs
+OR 
+Create a new application and include the "johnny-five" and "etherport-client" Libraries at the top
 ```
 const five = require("johnny-five"); 
 const EtherPortClient = require("etherport-client").EtherPortClient;
@@ -46,12 +46,12 @@ const EtherPortClient = require("etherport-client").EtherPortClient;
 
 # YOU'RE DONE
 You should get something like this: and your device's built in LED should be blinking
-
+```
 1531436035013 SerialPort Connecting to host:port: 192.168.29.50:3030
 1531436035016 Connected Connecting to host:port: 192.168.29.50:3030
 READY!
 IT'S BLINKING!!!
-
+```
 
 
 # NOTES & ERRORS
