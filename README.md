@@ -2,21 +2,21 @@
   <img src="http://nodebots.io/img/equation.png">
 </p>
 
-# NodeBotDays
+<h1>NodeBotDays</h1>
 You'll find our Installation notes &amp; Start up script for our annual NodeBotDays Event
 
-##Welcome to Our annual BocaJS NodeBot Days event.
+# Welcome to Our annual BocaJS NodeBot Days event.
 
 It's usually on the last saturday in July.
 
 We will be using be using the [johnny-five](http://johnny-five.io/) library to program our arduino devices.
 
-##The basics
+# The basics
 1) We'll flash our decices with the software for us to control it (Firmata)
 2) We will add the johnny-five npm package (and another one)
 3) We'll create our app and we'll be controlling our arduino with NodeJS!!!
 
-##The Detailed explanation
+# The Detailed explanation
 
 The "trick" to "running javascript on our arduino" is that "we don't"
 What we're doing is creating a program in our arduino that waits for commands from our laptops.
@@ -25,7 +25,7 @@ and the device does what we tell it.
 
 Of course you tell johnny-five what to do IN javascript, so in essense we tell the Arduino what to do in javascript
 
-##Instructions
+# Instructions
 
 1) Flash the Arduino
 For our ESP8266 D1 Mini Devices we'll be using the StandardFirmataWiFi Firmware.
@@ -44,7 +44,7 @@ const EtherPortClient = require("etherport-client").EtherPortClient;
 
 3) Now create the rest of your app as you see fit, using the examples from the [Johnny-Five Examples Page](http://johnny-five.io/examples/)
 
-##YOU'RE DONE
+# YOU'RE DONE
 You should get something like this: and your device's built in LED should be blinking
 
 1531436035013 SerialPort Connecting to host:port: 192.168.29.50:3030
@@ -54,7 +54,7 @@ IT'S BLINKING!!!
 
 
 
-##NOTES & ERRORS
+# NOTES & ERRORS
 There are three directories in this repo that are per each platform (Windows, Mac, Linux)
 If you have your computer setup correctly (or are just lucky that way) then you WON'T need them.
 But each platform DOES have some issues in some situations so each directy has a trick to get you going.
@@ -65,7 +65,7 @@ I'll describe the issues on each platform and you can then choose to follow the 
 - Linux - Similar to Windows. if you have any issues doing an "npm i johnny-five" then here I've included the "node_modules" directory that you'll need.
 
 
-## PINS on teh ESP8266 D1 Mini 
+# PINS on teh ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:
 
 NOTE: nc = not connected
