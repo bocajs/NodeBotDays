@@ -1,3 +1,4 @@
+(http://nodebots.io/img/equation.png)
 # NodeBotDays
 You'll find our Installation notes &amp; Start up script for our annual NodeBotDays Event
 
