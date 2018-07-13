@@ -55,9 +55,9 @@ IT'S BLINKING!!!
 
 
 # NOTES & ERRORS
-There are three directories in this repo that are per each platform (Windows, Mac, Linux)
-If you have your computer setup correctly (or are just lucky that way) then you WON'T need them.
-But each platform DOES have some issues in some situations so each directy has a trick to get you going.
+There are three directories in this repo that are per each platform (Windows, Mac, Linux).<BR>
+If you have your computer setup correctly (or are just lucky that way) then you WON'T need them.<BR>
+But each platform DOES have some issues in some situations so each directy has a trick to get you going.<BR>
 
 I'll describe the issues on each platform and you can then choose to follow the steps within each directory if you need it.
 - Windows - Python is hard to setup and when you "npm i johnny-five" you'll get an error. I've included the "node_modules" that you'll need.
