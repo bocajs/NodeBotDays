@@ -1,4 +1,6 @@
-(http://nodebots.io/img/equation.png)
+<p align="center">
+  <img src="http://nodebots.io/img/equation.png">
+</p>
 # NodeBotDays
 You'll find our Installation notes &amp; Start up script for our annual NodeBotDays Event
 
