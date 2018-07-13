@@ -1,0 +1,20 @@
+{
+  "name": "johnfive-windows-sample",
+  "version": "1.0.0",
+  "description": "This is the same app as the other platforms. just with the node modules included since in windows you need more setup",
+  "main": "johnnyFiveSample.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "john",
+    "five",
+    "esp8266"
+  ],
+  "author": "Damian Montero (BocaJS)",
+  "license": "MIT",
+  "dependencies": {
+    "etherport-client": "^0.1.3",
+    "johnny-five": "^0.15.0"
+  }
+}
