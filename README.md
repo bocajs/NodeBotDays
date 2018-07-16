@@ -11,6 +11,9 @@ It's usually on the last saturday in July.
 
 We will be using be using the [johnny-five](http://johnny-five.io/) library to program our Arduino devices.
 
+# The basics of "electronics" 
+https://www.youtube.com/watch?v=fq6U5Y14oM4
+
 # The basics
 1) We'll flash our devices with the software for us to control it (Firmata)
 2) We will add the johnny-five npm package (and another one)
