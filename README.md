@@ -5,6 +5,14 @@
 <h1>NodeBots Day</h1>
 You'll find our Installation notes &amp; Start up script for our annual NodeBots Day Event
 
+# Thanks to our Sponsors 
+This event wouldn't be possible without the amazing support of the Microsoft Azure Dev Advocates
+
+https://developer.microsoft.com/en-us/advocates
+
+<a href="https://twitter.com/azureadvocates"><img src="https://pbs.twimg.com/profile_images/895974253593583617/AWBCJfZW_400x400.jpg"></a>
+
+
 # Welcome to Our annual BocaJS NodeBot Days event.
 
 It's usually on the last saturday in July.
