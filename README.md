@@ -6,7 +6,7 @@
 You'll find our Installation notes &amp; Start up script for our annual NodeBots Day Event
 
 # Thanks to our Sponsors 
-This event wouldn't be possible without the amazing support of the Microsoft Azure Dev Advocates
+This event wouldn't be possible without the amazing support of the Microsoft’s Cloud Developer Advocacy team
 
 https://developer.microsoft.com/en-us/advocates
 
