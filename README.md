@@ -23,15 +23,15 @@ We will be using be using the [johnny-five](http://johnny-five.io/) library to p
 https://www.youtube.com/watch?v=fq6U5Y14oM4
 
 # The basics
-1) We'll flash our devices with the software for us to control it (Firmata)
-2) We will add the johnny-five npm package (and another one)
+1) We'll flash our devices with the software for us to control it (StandardFirmataESP.ino)
+2) We will add the johnny-five npm package (or just "npm i" for all)
 3) We'll create our app and we'll be controlling our Arduino with NodeJS!!!
 
 # The Detailed explanation
 
-The "trick" to "running JavaScript on our Arduino" is that "we don't"<br/>
-What we're doing is creating a program in our arduino that waits for commands from our laptops.<br/>
-We then use the johnny-five and other helpful libraries to send commands to the device.<br/>
+The "trick" to "running JavaScript on our Arduino" is that "we don't".<br/>
+What we're doing is creating a program in our arduino that waits for commands from our laptops. This program is called Firmata.<br/>
+We then use the johnny-five library and others to send commands to the device.<br/>
 and the device does what we tell it.<br/>
 
 Of course you tell johnny-five what to do using JavaScript, so in essense we tell the Arduino what to do with JavaScript
@@ -39,12 +39,11 @@ Of course you tell johnny-five what to do using JavaScript, so in essense we tel
 # Instructions
 
 1) Flash the Arduino
-For our ESP8266 D1 Mini Devices we'll be using the StandardFirmataWiFi Firmware.<br/>
-CHANGE the IP address to something unique and document it and of course set the Wifi SSID and Password correctly.<br/>
+For our ESP8266, Arduino Compatible Devices, we'll be using the a Modified version of the <a href="tree/master/ESP8266%20Firmware/StandardFirmata-ESP8266-USB">Firmata Firmware</a>.<br/>
+(Note the StandardFirmataWifi is included if you want to control your devices over Wifi)<br/>
 
-You can use the steps 1-4 in this guide to help http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/<br/>
-We've included the files you need (no need to download them) in the "ESP8266 Firmware" directory in this repo<br/>
-*OR* you can ask someone to do it for you. <br/>
+We have already flashed your device, BUT should you want to do the same then you can follow steps 1-4 in this guide to help http://www.instructables.com/id/ESP8266-Firmata-J5-NodeBot/<br/>
+Feel free to use your version of the StandardFirmataWifi which has already uncommented the hard coded IP Address because without a hard coded IP Address this is difficult.<BR>
 
 2) install the johnny-five and etherport libraries in your project (see NOTES & ERRORS below for any errors)
 ```
@@ -52,20 +51,17 @@ npm i johnny-five
 npm i etherport-client
 ```
 
-3) Skip the hassle and copy my [johnnyFiveSample.js](https://raw.githubusercontent.com/bocajs/NodeBotDays/master/johnnyFiveSample.js) and edit it to your needs <br/>
+3) Skip the hassle and copy my [johnnyFiveSample.js](blob/master/johnnyFiveSample.js) and edit it to your needs <br/>
 OR <br/>
-Create a new file and include the "johnny-five" and "etherport-client" libraries (see below) and code something wonderful!
-```
-const five = require("johnny-five"); 
-const EtherPortClient = require("etherport-client").EtherPortClient;
-```
+Use the ample in the http://johnny-five.io/examples/ page and include the "johnny-five" and "etherport-client" libraries (see below) and code something wonderful!
 
 
 # YOU'RE DONE
 You should get something like this: and your device's built in LED should be blinking
 ```
-1531436035013 SerialPort Connecting to host:port: 192.168.29.50:3030
-1531436035016 Connected Connecting to host:port: 192.168.29.50:3030
+1532205100372 Available COM5,COM7
+1532205100575 Connected COM7
+1532205105683 Repl Initialized
 READY!
 IT'S BLINKING!!!
 ```
