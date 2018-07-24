@@ -1,15 +1,11 @@
-#Mac
+Some newer Macs need drivers (believe or or not) for all of the ESP 8266 devices
+Because of these were are including a driver found from this repo. \
 
-There is no need for a precompiled node_module for certain situations on the mac.
-At least I haven't found an issue YET. 
 
-But what I DID find is that my brand new Macbook Pro COULDN'T see the arduino devices. 
-That's not a HUGE problem because the part that needs to "PROGRAM THE FIRMWARE" can be done on another computer and your node application can run well and fine on your mac regardless.
+https://github.com/rm-hull/lua-garden
 
-But for those that didn't join or are seeing problems you can try the drivers that worked for me.
 
-They're from SiLabs over at: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+I know. No one wants to install a driver, but I did work on my computer.
 
-Drivers for the USB to Serial (TTL) connection that didn't seem to work on MY machine can be found here:
+You WILL be asked to go into the settings and accept this driver from an "unknown author" because it's NOT for the apple App Store. 
 
-https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip
