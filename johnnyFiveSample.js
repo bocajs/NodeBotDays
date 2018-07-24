@@ -7,6 +7,7 @@
  */
 
 var five = require("johnny-five"); // Magic 
+var pins = require("./esp8266Pins");
 
 // For the Boards given to you at the event use #1, in other words don't touch anything.
 
@@ -34,7 +35,7 @@ var board = new five.Board({
 // Starndard Johnny-Five Blink Example
 board.on("ready", function() {
     console.log("READY!");
-    var led = new five.Led(2);
+    var led = new five.Led(pins.led);
     led.blink(500);
     console.log("IT'S BLINKING!!!");
 });
