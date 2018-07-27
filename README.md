@@ -81,6 +81,9 @@ I'll describe the issues on each platform and you can then choose to follow the 
 # PINS on the ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:<br/>
 
+More details in the "5. Pin Map" section - https://www.sigmdel.ca/michel/ha/esp8266/doit_nodemcu_v3_en.html
+
+
 NOTE: nc = not connected<br/>
 
 - 0 -> d3
