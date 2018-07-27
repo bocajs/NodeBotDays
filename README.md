@@ -87,7 +87,7 @@ Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless
 
 More details in the "5. Pin Map" section - https://www.sigmdel.ca/michel/ha/esp8266/doit_nodemcu_v3_en.html
 
-but you DON'T NEED to guess. because I've made a quick simple library you can include: [esp8266Pins.js](blob/master/esp8266Pins.js)
+but you DON'T NEED to guess. because I've made a quick simple library you can include: [esp8266Pins.js](esp8266Pins.js)
 
 NOTE: nc = not connected<br/>
 
