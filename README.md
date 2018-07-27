@@ -77,6 +77,9 @@ I'll describe the issues on each platform and you can then choose to follow the 
 - Mac - the issue isn't with johnny-five (if you have any). it's flashing the firmware on the arduino if you need to. I've include some drivers that may help.
 - Linux - Similar to Windows. if you have any issues doing an "npm i johnny-five" then here I've included the "node_modules" directory that you'll need.
 
+# An GREAT step by step guide to Javascript on Arduino
+https://www.hackster.io/glowascii/basic-arduino-javascript-workshop-88c8df
+
 
 # PINS on the ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:<br/>
