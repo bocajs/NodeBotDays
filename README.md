@@ -83,6 +83,9 @@ I'll describe the issues on each platform and you can then choose to follow the 
 Suggested kit. But ANY "ioT kit" or "arduino kit" will work.
 https://amzn.to/2LXE9WD
 
+and if you're willing to wait 2-3 weeks:
+https://www.banggood.com/Geekcreit-UNO-R3-Basic-Starter-Learning-Kit-No-Battery-Version-For-Arduino-p-1133595.html?p=HM120921041312015082
+
 
 # PINS on the ESP8266 D1 Mini 
 Some Extra notes about the ESP8266 D1 Mini's PINs. This are NOT important unless you run into an issue:<br/>
