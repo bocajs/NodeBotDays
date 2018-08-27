@@ -39,20 +39,9 @@
 #define I2C_MAX_QUERIES             8
 #define I2C_REGISTER_NOT_SPECIFIED  -1
 
-// ESP8266 generic - Make it compatible with PingFirmata and teh HC-SR04 proximity board
-#define TOTAL_ANALOG_PINS       0
-#define TOTAL_PINS              17
-#define VERSION_BLINK_PIN       4
-#define IS_PIN_DIGITAL(p)       ((p) == 0 || (p) == 2 || (p) == 4 || (p) == 5 || (p) == 12 || (p) == 13 || (p) == 14 || (p) == 15 || (p) == 16)
-#define IS_PIN_ANALOG(p)        (false)
-#define IS_PIN_PWM(p)           (false)
-#define IS_PIN_SERVO(p)         ((p) >= 0 && (p) < MAX_SERVOS)
-#define IS_PIN_I2C(p)           (false)
-#define IS_PIN_SPI(p)           (false)
-#define PIN_TO_DIGITAL(p)       (p)
-#define PIN_TO_ANALOG(p)        ((p) - 17)
-#define PIN_TO_PWM(p)           PIN_TO_DIGITAL(p)
-#define PIN_TO_SERVO(p)         p
+#define PING_READ                0x75
+// PING_READ is for use with HCSR04 and similar "ultrasonic ping" components
+
 
 // the minimum interval for sampling analog input
 #define MINIMUM_SAMPLING_INTERVAL   1
@@ -655,6 +644,8 @@ void sysexCallback(byte command, byte argc, byte *argv)
           Firmata.write(1);
           Firmata.write((byte)OUTPUT);
           Firmata.write(1);
+          Firmata.write((byte)PING_READ);
+          Firmata.write(1);
         }
         if (IS_PIN_ANALOG(pin)) {
           Firmata.write(PIN_MODE_ANALOG);
@@ -703,6 +694,56 @@ void sysexCallback(byte command, byte argc, byte *argv)
       Firmata.write(END_SYSEX);
       break;
 
+      case PING_READ: {
+      byte pulseDurationArray[4] = {
+        (argv[2] & 0x7F) | ((argv[3] & 0x7F) << 7),
+        (argv[4] & 0x7F) | ((argv[5] & 0x7F) << 7),
+        (argv[6] & 0x7F) | ((argv[7] & 0x7F) << 7),
+        (argv[8] & 0x7F) | ((argv[9] & 0x7F) << 7)
+      };
+      unsigned long pulseDuration = ((unsigned long)pulseDurationArray[0] << 24)
+              + ((unsigned long)pulseDurationArray[1] << 16)
+              + ((unsigned long)pulseDurationArray[2] << 8)
+              + ((unsigned long)pulseDurationArray[3]);
+      if (argv[1] == HIGH){
+        pinMode(argv[0],OUTPUT);
+        digitalWrite(argv[0],LOW);
+        delayMicroseconds(2);
+        digitalWrite(argv[0],HIGH);
+        delayMicroseconds(pulseDuration);
+        digitalWrite(argv[0],LOW);
+      } else {
+        digitalWrite(argv[0],HIGH);
+        delayMicroseconds(2);
+        digitalWrite(argv[0],LOW);
+        delayMicroseconds(pulseDuration);
+        digitalWrite(argv[0],HIGH);
+      }
+      unsigned long duration;
+      byte responseArray[5];
+      byte timeoutArray[4] = {
+          (argv[10] & 0x7F) | ((argv[11] & 0x7F) << 7),
+          (argv[12] & 0x7F) | ((argv[13] & 0x7F) << 7),
+          (argv[14] & 0x7F) | ((argv[15] & 0x7F) << 7),
+          (argv[16] & 0x7F) | ((argv[17] & 0x7F) << 7)
+      };
+      unsigned long timeout = ((unsigned long)timeoutArray[0] << 24) +
+                              ((unsigned long)timeoutArray[1] << 16) +
+                              ((unsigned long)timeoutArray[2] << 8) +
+                              ((unsigned long)timeoutArray[3]);
+
+      pinMode(argv[0],INPUT);
+      duration = pulseIn(argv[0], argv[1],timeout);
+      responseArray[0] = argv[0];
+      responseArray[1] = (((unsigned long)duration >> 24) & 0xFF);
+      responseArray[2] = (((unsigned long)duration >> 16) & 0xFF);
+      responseArray[3] = (((unsigned long)duration >> 8) & 0xFF);
+      responseArray[4] = (((unsigned long)duration & 0xFF));
+
+      Firmata.sendSysex(PING_READ, 5, responseArray);
+      break;
+    }    
+      
     case SERIAL_MESSAGE:
 #ifdef FIRMATA_SERIAL_FEATURE
       serialFeature.handleSysex(command, argc, argv);
