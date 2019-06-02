@@ -4,8 +4,8 @@
 
 <h1>NodeBots Day</h1>
 You'll find our Installation notes &amp; Start up script for our annual NodeBots Day Event
-Fotos and Details about our event is at: https://www.meetup.com/BocaJS/events/251627580/
-MiamiJS has their Photos here: https://www.meetup.com/MiamiJS/events/252458005/ 
+Fotos and Details about our event is at: https://www.meetup.com/BocaJS/events/261562000/ <BR/>
+Photos of last year's event are here: https://www.meetup.com/BocaJS/photos/29112765/473290323/
 
 # Thanks to our Sponsors 
 This event wouldn't be possible without the amazing support of the Microsoft’s Cloud Developer Advocacy team
