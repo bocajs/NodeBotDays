@@ -12,22 +12,22 @@ This event wouldn't be possible without the amazing support of the Microsoft’s
 
 https://developer.microsoft.com/en-us/advocates
 
-<a href="https://twitter.com/azureadvocates"><img src="https://pbs.twimg.com/profile_images/895974253593583617/AWBCJfZW_400x400.jpg"></a>
+<a href="https://twitter.com/azureadvocates"><img src="Microsoft.png"></a>
 
 
 # Welcome to our annual  NodeBot Days event.
 
-This is now the 4th year in a row that we've had it. Obviosly started by <a href="http://meetup.com/miamijs">MiamiJS</a>, this year we've joined together forces with <a href="https://meetup.com/BocaJS">BocaJS</a> and <a href="https://meetup.com/palm-beach-javascript">Palm Beach JS</a>
+This is now the 4th year in a row that we've had it. Obviously started by <a href="http://meetup.com/miamijs">MiamiJS</a>, this year we've joined together forces with <a href="https://meetup.com/BocaJS">BocaJS</a> and <a href="https://meetup.com/palm-beach-javascript">Palm Beach JS</a>
 
-Idealy this is a place for those that are beginners to learn how to use Javascript to control IoT devices. Specifically Arduino micro controllers.
+Ideally this is a place for those that are beginners to learn how to use Javascript to control IoT devices. Specifically  Arduino micro controllers.
 
 Our Kits (that were generously provided by Microsoft) contain the following parts:
-- ESP8266 (this is the main "CPU" or Arudino device) 
+- ESP8266 (this is the main "CPU" or Arduino device) 
 - A Breadboard (the place to connect all things together with)
 - A lot of easy to connect wires
 - 5 LED (the little lights)
 - Resisters
-- Potentionmeters (the little volumn nobs)
+- •	Potentiometers  (the little volume nobs)
 - Switches
 - Motor shields (easily connect MOTORS to your Arduino)
 - Motors
@@ -49,7 +49,7 @@ What we'll do with the johnny-Five Library
 2) We will add the johnny-five npm package (or just "npm i" for all)
 3) We will run the blink.js file as see the device blink.
 
-#Espruino
+# Espruino
 The [Espruino](https://www.espruino.com/) library goes about the same task a different way. It is really Javascript running on these devices. and not only do you write javascript. send it to the device and it doesn't need a computer any more. BUT also you can have javascript interactivity. This DOES mean that it must fit into the javascript interpreter that's running on the device. but it means no computer is needed AFTER you've saved the program onto the device. You can still interact with a computer but it's stand alone. Having said that something you'll learn to do is have a basic web server on the device that will let you interact with it from any device. You ALSO can program it from any Chrome Browser including the one on chromebooks.
 
 What we will do with the Espruino
