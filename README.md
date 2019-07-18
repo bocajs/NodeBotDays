@@ -12,7 +12,7 @@ This event wouldn't be possible without the amazing support of the Microsoft’s
 
 https://developer.microsoft.com/en-us/advocates
 
-<a href="https://twitter.com/azureadvocates"><img src="https://pbs.twimg.com/profile_images/895974253593583617/AWBCJfZW_400x400.jpg"></a>
+<a href="https://twitter.com/azureadvocates"><img src="http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2qVsJ?ver=3f74"></a>
 
 
 # Welcome to our annual  NodeBot Days event.
