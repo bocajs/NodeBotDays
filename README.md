@@ -27,7 +27,7 @@ Our Kits (that were generously provided by Microsoft) contain the following part
 - A lot of easy to connect wires
 - 5 LED (the little lights)
 - Resisters
-- •	Potentiometers  (the little volume nobs)
+- Potentiometers  (the little volume nobs)
 - Switches
 - Motor shields (easily connect MOTORS to your Arduino)
 - Motors
