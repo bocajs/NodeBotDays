@@ -1,3 +1,4 @@
+# in the command line look for something in the /dev/ directory starting with "cu." or "ttyUSB"
 # mac = /dev/cu.SLAB_USBtoUART
 # Linux = /dev/ttyUSB0 (or 1 at the end of that)
 
