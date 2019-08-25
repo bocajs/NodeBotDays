@@ -1,7 +1,8 @@
 var ssid = 'YOUR_SSID'; // only using if you're not setting up your own AP
 var password = 'YOUR_SSID_PASSWORD';// only using if you're not setting up your own AP
-var port = 80;
-var wifi = require('Wifi');
+let port = 80;
+let wifi = require('Wifi');
+let http = require('http');
 console.log("started");
 
 
@@ -30,35 +31,34 @@ function processRequest (req, res) {
 }
 
 
-
 // Let's connect to an existing WIFI network. !!! Comment the "wifi.startAP" line to use an existing Wifi Network.
-// wifi.connect(ssid, {password: password}, function() {
-// console.log('Connected to Wifi.  IP address is:', wifi.getIP().ip);
-
+wifi.connect(ssid, {password: password}, function(err) {
+ 
 // Setup a private AP Wifi Network  !!! Comment the "wifi.connect..." line to use this
-wifi.startAP('EspruinoAP', { password: '0123456789', authMode: 'wpa2' }, function(err) {
+//wifi.startAP('EspruinoAP', { password: '0123456789', authMode: 'wpa2' }, function(err) {
   
+    if (err) throw err;
+
+    // Webserver
+    http.createServer(processRequest).listen(port);
+    let ip =  wifi.getIP().ip;
+    if (ip == "0.0.0.0") {
+      ip = "192.168.4.1";
+    }
+    console.log(`Connected to Wifi.\nWeb server running at http://${ip}:${port}`);
   
-  var http = require('http');
-  if (err) throw err;
-  console.log("Connected to Wifi!");
-  wifi.on('associated',function() { console.log("We're connected to an AP"); });
-  wifi.on('connected',function() { console.log("We have an IP Address"); });
-  wifi.on('disconnected',function() { console.log("We disconnected"); });
-  
-  
+    
     // Go get something from another website
-    http.get("https://www.google.com", function(res) {
+    http.get("https://google.com", function(res) {
+      console.log("Connecting to google.com");
       res.on('data', function(data) {
         console.log(data);
       });
     });
   
-    // Webserver
-    var http = require('http');
-    http.createServer(processRequest).listen(port);
-    console.log(`Web server running at http://192.168.4.1:${port}`);
-  
-  
 });
 
+  wifi.on('associated',function() { console.log("We're connected to an AP"); });
+  wifi.on('connected',function() { console.log("We have an IP Address"); });
+  wifi.on('disconnected',function() { console.log("We disconnected"); });
+  
