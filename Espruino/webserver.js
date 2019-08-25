@@ -26,7 +26,7 @@ function processRequest (req, res) {
                htmlPage = htmlPage.replace("%content%","Page not found!");
             break;
                 }
-    res.writeHead(200);
+    res.writeHead(headerCode);
     res.end(htmlPage);
 }
 
