@@ -11,4 +11,5 @@ You MUST start with the official [Johnny-Five Example Page](http://johnny-five.i
 
 OTHER things you'll find here:
 - ESP8266 FIRMWARE Directory - this is where you'll find the two types of firmware to get your device BACK (if you tried espruino) to the Johnny-Five Firmware. There's the Standard and WIFI firmwares.
-- Directories for EACH OS (Win, Mac, Linux) which will have drivers and node_modules for those that have problems. You probably don't need any of this. but it's here just in case
+- Directories for EACH OS (Win, Mac, Linux) which will have drivers and node_modules for those that have problems. You probably don't need any of this. but it's here just in case!
+

@@ -1,7 +1,6 @@
 /*
 A Fancy web server with different pages as well as it'll print out the IP address it's been assigned.
 */
-
 var ssid = 'YOUR_SSID'; // only using if you're not setting up your own AP
 var password = 'YOUR_SSID_PASSWORD';// only using if you're not setting up your own AP
 let port = 80;
@@ -65,4 +64,3 @@ wifi.connect(ssid, {password: password}, function(err) {
   wifi.on('associated',function() { console.log("We're connected to an AP"); });
   wifi.on('connected',function() { console.log("We have an IP Address"); });
   wifi.on('disconnected',function() { console.log("We disconnected"); });
-  
