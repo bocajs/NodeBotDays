@@ -58,10 +58,8 @@ What we will do with the Espruino
 3) Click the connect icon (top left) and choose our port
 4) click the "OPEN" icon (folder in the middle) and choose the blink.js
 
-
-
-# The basics of "electronics" 
-https://www.youtube.com/watch?v=fq6U5Y14oM4
+# The basics of a bread board
+https://www.youtube.com/watch?v=w0c3t0fJhXU&t=1m7s
 
 
 
